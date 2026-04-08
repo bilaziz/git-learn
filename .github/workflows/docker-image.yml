@@ -13,10 +13,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Log in to Docker Hub
-        run: echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" | docker login -u "${{ secrets.USERNAME }}" --password-stdin
+        run: echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" | docker login -u bilaziz
 
       - name: Build Docker image
-        run: docker build -t ${{ secrets.USERNAME }}/learning-github-action:latest .
+        run: docker build -t ${{ secrets.USERNAME }}/git-learn:latest .
 
       - name: Push Docker image
-        run: docker push ${{ secrets.USERNAME }}/learning-github-action:latest
+        run: docker push ${{ secrets.USERNAME }}/gitlearn:latest
